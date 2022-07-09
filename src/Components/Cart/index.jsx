@@ -5,7 +5,7 @@ import { useState } from "react";
 import styles from  './styles.module.scss';
 import {CartContext} from "../../Context/cartContext";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCartShopping, faCartPlus} from '@fortawesome/free-solid-svg-icons';
+import {faCartShopping, faCircleXmark} from '@fortawesome/free-solid-svg-icons';
 import ItemCart from "../ItemCart";
 
 
@@ -30,7 +30,7 @@ const Cart = () => {
            <div onClick={()=>{setCartOpen(!cartOpen)}} className={styles.buttonCartContainer}>
             <div className={styles.buttonCart}>
                 {!cartOpen ? (
-                    <FontAwesomeIcon icon={faCartShopping} /> ): (<FontAwesomeIcon icon={faCartPlus}/>)
+                    <FontAwesomeIcon icon={faCartShopping} /> ): (<FontAwesomeIcon icon={faCircleXmark}/>)
             }
             </div>
             {!cartOpen && <div className={styles.productsNumber}>{productsLength}</div>}
@@ -41,7 +41,8 @@ const Cart = () => {
             {cartItems.length === 0 ?
              (<p className={styles.cartEmpty}>Tu carrito está vacio</p>
               ) : (
-              <div>{cartItems.map((item,i)=> (
+              <div className={styles.productsContainer}>
+                {cartItems.map((item,i)=> (
             <ItemCart key={i} item={item} />
            ))}
            </div>

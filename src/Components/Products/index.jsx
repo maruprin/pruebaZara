@@ -14,10 +14,12 @@ const Products = () => {
                 {console.log(product.img)}
                 <div>
                     <p>
-                        {product.name} - {product.price}€
+                        {product.name}
+                         <br/> 
+                         {product.price}€
                     </p>
                 </div>
-                <button onClick={()=> addItemToCart(product)}>Agregar al carrito</button>
+                <button onClick={()=> addItemToCart(product)}>Lo quiero</button>
          </div>
          )) }
         </div>
