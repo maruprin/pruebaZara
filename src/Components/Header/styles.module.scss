@@ -4,4 +4,22 @@ div.header{
     height: 79px;
     position: fixed;
 	top: 0px;
+    z-index: 1;
+
+    h1.titulo{
+        color: white;
+        text-align: center;
+        
+    }
+    a.link{
+     color: antiquewhite;
+     position: absolute;
+     top: 30px;
+     right: 1350px;
+    }
+    a.link:hover{
+        color: #9900cc;
+       
+    }
 }
+

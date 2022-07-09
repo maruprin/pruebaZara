@@ -4,8 +4,9 @@ import styles from './styles.module.scss'
 const Header = () => {
     return (
         <div className={styles.header}>
-           Holu soy header
-           <a href='#'>Productos</a>
+            <h1 className={styles.titulo}>Tu tienda de móviles</h1>
+          
+           <a className={styles.link} href='#'>Home</a>
         </div>
     )
 }

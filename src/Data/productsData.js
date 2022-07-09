@@ -55,4 +55,5 @@ export const ProductsData = [
         name: 'Samsung Galaxy A53',
         img: 'https://raw.githubusercontent.com/maruprin/pruebaZara/main/src/img/samsungGalA53.webp',
     },
+    
 ]

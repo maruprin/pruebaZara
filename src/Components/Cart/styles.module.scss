@@ -1,10 +1,12 @@
 .cartContainer{
-    width: 100vw;
+    width: 100px;
     height: 50px;
     display: flex;
     justify-content: flex-end;
     margin-bottom: 100px;
     position: fixed;
+    right: -20px;
+    z-index: 2;
     .buttonCartContainer{
         position: fixed;
         margin-top: 10px;
@@ -15,26 +17,26 @@
       
     .buttonCart{
         background-color: #9f419f;
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 999px;
         color: white;
-        font-size: 25px;
+        font-size: 21px;
         position: fixed;
-        top: 8px;
+        top: 15px;
         right: 20px;
          }
          .productsNumber{
-            height: 20px;
-            width: 20px;
+            height: 18px;
+            width:18px;
             border-radius: 999px;
             top: 0;
             right: 0;
             background-color: #fb3939;
-            font-size: 12px;
+            font-size: 10px;
             font-weight: bold;
             color: white;
             display: flex;
