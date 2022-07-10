@@ -6,7 +6,7 @@ const Header = () => {
         <div className={styles.header}>
             <h1 className={styles.titulo}>Tu tienda de móviles</h1>
           
-           <a className={styles.link} href='#'>Home</a>
+           <a className={styles.link} href='http://localhost:3000/'>Home</a>
         </div>
     )
 }

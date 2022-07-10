@@ -6,6 +6,7 @@ import { CartContext } from "../../Context/cartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Products = () => {
     const {addItemToCart} = useContext(CartContext)
@@ -54,6 +55,8 @@ console.log(productos);
                         {product.name}
                          <br/> 
                          {product.price}€
+                         <br/>
+                         <a href='/info'>Ver más</a>
                     </p>
                 </div>
                 <button onClick={()=> addItemToCart(product)}>Lo quiero</button>

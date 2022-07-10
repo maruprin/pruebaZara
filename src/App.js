@@ -1,13 +1,18 @@
-
 import './App.scss';
-import Home from './Components/Home'
-import { CartProvider } from './Context/cartContext';
+import HomeWrap from './Components/HomeWrap';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Info from './Components/Info';
 
 function App() {
   return (
-    <CartProvider>
-      <Home />
-    </CartProvider>
+   <BrowserRouter>
+   <Routes>
+    <Route exact path='/' element={<HomeWrap/>}/>
+    <Route exact path='/info' element={<Info/>}/>
+
+   </Routes>
+   </BrowserRouter>
+    
   );
 }
 
