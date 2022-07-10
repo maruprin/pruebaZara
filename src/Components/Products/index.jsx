@@ -9,23 +9,28 @@ import { useEffect } from "react";
 
 const Products = () => {
     const {addItemToCart} = useContext(CartContext)
-    const [productos, setProductos] = useState([ProductsData])
+    const [productos, setProductos] = useState(ProductsData)
     const [busqueda, setBusqueda] = useState("")
    
     const handleChange = e =>{
         setBusqueda(e.target.value) 
         //console.log("Busqueda: " +e.target.value);
-        filtrar(e.target.value);
+        if(e.target.value!==""){
+            filtrar(e.target.value);
+        } 
+        else{
+            setProductos(ProductsData);
+        }
+        
     } 
    
     const filtrar = (terminoBusqueda)=>{
-        var aux = ProductsData.filter((prod)=> prod.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+        const productosFiltrados = ProductsData.filter((prod)=> prod.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
         );
-        setProductos(aux);
-        console.log(productos)
+        setProductos(productosFiltrados);
 
     }
-
+console.log(productos);
 
     return (
       <> 
