@@ -56,7 +56,7 @@ console.log(productos);
                          <br/> 
                          {product.price}€
                          <br/>
-                         <a href='/info'>Ver más</a>
+                         <Link to='/info' state={{from: product.id}} >Ver más</Link>
                     </p>
                 </div>
                 <button onClick={()=> addItemToCart(product)}>Lo quiero</button>
