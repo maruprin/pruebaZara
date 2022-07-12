@@ -7,10 +7,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getProducts } from "../../apiConect";
+
+const urlProducts = 'https://front-test-api.herokuapp.com/api/product';
+const urlProductsId = 'https://front-test-api.herokuapp.com/api/product/:id';
 
 const Products = () => {
     const {addItemToCart} = useContext(CartContext)
-    const [productos, setProductos] = useState(ProductsData)
+    const [productos, setProductos] = useState([])//(ProductsData)
     const [busqueda, setBusqueda] = useState("")
    
     const handleChange = e =>{
@@ -33,6 +37,10 @@ const Products = () => {
     }
 console.log(productos);
 
+const getProd = getProducts(urlProducts).then(value =>setProductos(value));
+//console.log(getProd);
+//const getProdId = getProducts(urlProductsId);
+//console.log(getProdId);
     return (
       <> 
        <div className={styles.search}> 

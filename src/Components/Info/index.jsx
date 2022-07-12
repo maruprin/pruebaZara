@@ -8,10 +8,11 @@ import styles from './styles.module.scss'
 import { useLocation } from "react-router-dom";
 
 
+
 const Info = () => {
    const location= useLocation();
    const itemId = location.state.from;
-
+ 
     return (
         <>
         <div className={styles.containerInfo}>
@@ -21,6 +22,7 @@ const Info = () => {
             <Imagen props={{itemId:itemId}} />
             <Descripcion props={{itemId:itemId}} /> 
             <Acciones props={{itemId:itemId}} />
+           
       
      
      </div>

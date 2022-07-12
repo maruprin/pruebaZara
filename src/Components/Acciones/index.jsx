@@ -29,7 +29,7 @@ const Acciones = () => {
             id="radio1"
             type="radio"
             value="1"
-            checked={framework == 1? true:false}
+            checked={framework === 1? true:false}
             onChange={cambioRadioFramework}
             />
             <Label for="radio1">
@@ -42,7 +42,7 @@ const Acciones = () => {
             id="radio2"
             type="radio"
             value="2"
-            checked={framework == 2? true:false}
+            checked={framework === 2? true:false}
             onChange={cambioRadioFramework}
             />
             <Label for="radio2">
@@ -55,7 +55,7 @@ const Acciones = () => {
             id="radio3"
             type="radio"
             value="3"
-            checked={framework == 3? true:false}
+            checked={framework === 3? true:false}
             onChange={cambioRadioFramework}
             />
             <Label for="radio3">
@@ -74,7 +74,7 @@ const Acciones = () => {
             id="radio1"
             type="radio"
             value="1"
-            checked={framework2 == 1? true:false}
+            checked={framework2 === 1? true:false}
             onChange={cambioRadioFramework2}
             />
             <Label for="radio1">
@@ -87,7 +87,7 @@ const Acciones = () => {
             id="radio2"
             type="radio"
             value="2"
-            checked={framework2 == 2? true:false}
+            checked={framework2 === 2? true:false}
             onChange={cambioRadioFramework2}
             />
             <Label for="radio2">
@@ -100,7 +100,7 @@ const Acciones = () => {
             id="radio3"
             type="radio"
             value="3"
-            checked={framework2 == 3? true:false}
+            checked={framework2 === 3? true:false}
             onChange={cambioRadioFramework2}
             />
             <Label for="radio3">
@@ -112,7 +112,7 @@ const Acciones = () => {
             id="radio4"
             type="radio"
             value="4"
-            checked={framework2 == 4? true:false}
+            checked={framework2 === 4? true:false}
             onChange={cambioRadioFramework2}
             />
             <Label for="radio4">

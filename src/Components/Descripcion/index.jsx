@@ -3,33 +3,36 @@ import { ProductsData } from "../../Data/productsData";
 import styles from './styles.module.scss'
 
 
-const Descripcion = () => {
-    let prueba = ProductsData[0]; 
+const Descripcion = ({props}) => {
+    const itemId=props.itemId
+    let element = ProductsData[itemId-1]; 
+    console.log(element)
     return (
         <>
          {
          <div className={styles.descripcion}   key={1}>
              
             <p>
-                Marca: {ProductsData[1].marca}
+                
+                Marca: {element.marca}
                 <br/> 
-                Modelo: {ProductsData[1].modelo}
+                Modelo: {element.modelo}
                 <br/> 
-                CPU: {ProductsData[1].CPU}
+                CPU: {element.CPU}
                 <br/> 
-                RAM: {ProductsData[1].RAM}
+                RAM: {element.RAM}
                 <br/>
-                Sistema operativo: {ProductsData[1].sistemaOperativo}
+                Sistema operativo: {element.sistemaOperativo}
                 <br/>
-                Resolución de pantalla: {ProductsData[1].resolucionDePantalla}
+                Resolución de pantalla: {element.resolucionDePantalla}
                 <br/>
-                Bateria: {ProductsData[1].bateria}
+                Bateria: {element.bateria}
                 <br/>
-                Camaras: {ProductsData[1].camaras}
+                Camaras: {element.camaras}
                 <br/>
-                Dimensiones: {ProductsData[1].dimensiones}
+                Dimensiones: {element.dimensiones}
                 <br/>
-                Peso: {ProductsData[1].peso}
+                Peso: {element.peso}
                 <br/>
                 
                          

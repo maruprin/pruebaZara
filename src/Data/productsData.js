@@ -20,7 +20,7 @@ export const ProductsData = [
     },
     {
         id: 2,
-        price: 1000,
+        price: 1100,
         amount: 0,
         name: 'Iphone 13 mini',
         img: 'https://raw.githubusercontent.com/maruprin/pruebaZara/main/src/img/iphone13mini.webp',
@@ -37,7 +37,7 @@ export const ProductsData = [
     },
     {
         id: 3,
-        price: 1000,
+        price: 980,
         amount: 0,
         name: 'Iphone 13 ProMax',
         img: 'https://raw.githubusercontent.com/maruprin/pruebaZara/main/src/img/iphone13Promax.webp',
@@ -54,7 +54,7 @@ export const ProductsData = [
     },
     {
         id: 4,
-        price: 1000,
+        price: 1250,
         amount: 0,
         name: 'Iphone SE',
         img: 'https://raw.githubusercontent.com/maruprin/pruebaZara/main/src/img/iphoneSE.webp',
@@ -71,7 +71,7 @@ export const ProductsData = [
     },
     {
         id: 5,
-        price: 1000,
+        price: 780,
         amount: 0,
         name: 'Samsung Galaxy A13',
         img: 'https://raw.githubusercontent.com/maruprin/pruebaZara/main/src/img/samsungGalA13.webp',
@@ -88,7 +88,7 @@ export const ProductsData = [
     },
     {
         id: 6,
-        price: 1000,
+        price: 699,
         amount: 0,
         name: 'Samsung Galaxy A13',
         img: 'https://raw.githubusercontent.com/maruprin/pruebaZara/main/src/img/samsungGalA13b.webp',
@@ -105,7 +105,7 @@ export const ProductsData = [
     },
     {
         id: 7,
-        price: 1000,
+        price: 790,
         amount: 0,
         name: 'Samsung Galaxy A22',
         img: 'https://raw.githubusercontent.com/maruprin/pruebaZara/main/src/img/samsungGalA22.webp',
@@ -122,7 +122,7 @@ export const ProductsData = [
     },
     {
         id: 8,
-        price: 1000,
+        price: 999,
         amount: 0,
         name: 'Samsung Galaxy A53',
         img: 'https://raw.githubusercontent.com/maruprin/pruebaZara/main/src/img/samsungGalA53.webp',
