@@ -11,7 +11,7 @@ const Imagen = ({props}) => {
            
         {
          <div className={styles.imagen}   key={1}>
-             <img src={element.img} alt={element.name} />
+             <img src={element.imgUrl} alt={element.name} />
          </div>
         }
        

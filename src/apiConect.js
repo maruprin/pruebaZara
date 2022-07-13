@@ -1,10 +1,10 @@
 import axios from 'axios';
-
+import React from 'react';
 
 const getProducts = async (url) => await fetchData(url);
 
 const fetchData = async (url) => {
-    console.log(`Fetching data from ${url}`);
+    //console.log(`Fetching data from ${url}`);
 
     try {
         const response = await axios.get(url);

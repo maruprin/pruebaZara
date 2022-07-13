@@ -9,10 +9,10 @@ const ItemCart = ({item}) => {
     const {id} = item;
     return (
     <div className={styles.cartItem}>
-        <img src={item.img} alt={item.name}/>
+        <img src={item.imgUrl} alt={item.brand}/>
         <div className={styles.dataContainer}>
             <div className={styles.left}>
-                <p> {item.name} </p>
+                <p> {item.brand} - {item.model} </p>
                 <div className={styles.buttons}>
                     <button onClick={()=> addItemToCart(item)}>Agregar</button>
                     <button onClick={()=> deleteItemToCart(item)}>Quitar</button>

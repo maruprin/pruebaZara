@@ -8,15 +8,30 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getProducts } from "../../apiConect";
+import axios from 'axios';
+import { useCallback } from "react";
 
 const urlProducts = 'https://front-test-api.herokuapp.com/api/product';
 const urlProductsId = 'https://front-test-api.herokuapp.com/api/product/:id';
 
+
 const Products = () => {
     const {addItemToCart} = useContext(CartContext)
-    const [productos, setProductos] = useState([])//(ProductsData)
+    const [productosDin, setProductosDin] = useState([])//(ProductsData)
+    const [productosEst, setProductosEst] = useState([])
     const [busqueda, setBusqueda] = useState("")
-   
+  
+    const fetchData = async (url) => {
+        await axios.get(url).then(response=>{
+            setProductosDin(response.data);
+            setProductosEst(response.data);
+        }).catch(error=>{console.log(error)})
+
+        }
+
+    useEffect(()=>{fetchData(urlProducts)},[])
+
+
     const handleChange = e =>{
         setBusqueda(e.target.value) 
         //console.log("Busqueda: " +e.target.value);
@@ -24,21 +39,29 @@ const Products = () => {
             filtrar(e.target.value);
         } 
         else{
-            setProductos(ProductsData);
+            setProductosDin(productosEst);
         }
         
     } 
    
     const filtrar = (terminoBusqueda)=>{
-        const productosFiltrados = ProductsData.filter((prod)=> prod.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+        const productosFiltrados = productosEst.filter((prod)=> prod.brand.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
         );
-        setProductos(productosFiltrados);
+        setProductosDin(productosFiltrados);
 
+        console.log(productosFiltrados);
     }
-console.log(productos);
+//console.log(productos);
 
-const getProd = getProducts(urlProducts).then(value =>setProductos(value));
-//console.log(getProd);
+
+
+
+
+
+
+
+
+//useEffect(()=>{fetchData(urlProducts).catch(console.error)},[fetchData])
 //const getProdId = getProducts(urlProductsId);
 //console.log(getProdId);
     return (
@@ -54,13 +77,13 @@ const getProd = getProducts(urlProducts).then(value =>setProductos(value));
        </button></div>
         <div className={styles.productsContainer}>
             
-           {productos.map((product,i) => (
+           {productosDin.map((product,i) => (
             <div className={styles.product}   key={i}>
-                <img src={product.img} alt={product.name} />
+                <img src={product.imgUrl} alt={product.name} />
                 
                 <div>
                     <p>
-                        {product.name}
+                        {product.brand} - {product.model}
                          <br/> 
                          {product.price}€
                          <br/>
