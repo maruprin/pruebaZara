@@ -36,6 +36,7 @@ const Info = () => {
            const {colors, internalMemory} = response.data;
            const colorsAndCapacity = {colors, internalMemory};
            setColorCapacity(colorsAndCapacity);
+           //console.log(colors)
            
 
 
@@ -54,7 +55,7 @@ const Info = () => {
             <p className={styles.titulo}>Ficha técnica</p> 
             <Imagen imgPath={imgPath} alt={altPath} />
             <Descripcion caracteristicas={caracteristicas} />
-            <Acciones colorCapacity={colorCapacity} /> 
+            <Acciones colorCapacity={colorCapacity} />
 
             
            

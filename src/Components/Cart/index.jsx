@@ -34,6 +34,8 @@ const Cart = () => {
             }
             </div>
             {!cartOpen && <div className={styles.productsNumber}>{productsLength}</div>}
+            {!cartOpen && <div className={styles.productsTotal}>{total}€</div>}
+
            </div>
            {cartItems && cartOpen && (
            <div className={styles.cart}>
