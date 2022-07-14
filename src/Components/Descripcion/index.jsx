@@ -1,38 +1,38 @@
 import React from "react";
-import { ProductsData } from "../../Data/productsData";
 import styles from './styles.module.scss'
 
 
-const Descripcion = ({props}) => {
-    const itemId=props.itemId
-    let element = ProductsData[itemId-1]; 
-    console.log(element)
+const Descripcion = (props) => {
+    const {brand, model, price, cpu, ram, os, displayResolution, battery, primaryCamera, secondaryCmera, dimentions, weight} = props.caracteristicas;
+    //console.log(props)
     return (
         <>
          {
          <div className={styles.descripcion}   key={1}>
              
-            <p>
+            <p className={styles.itemsDescripcion}>
                 
-                Marca: {element.marca}
+                Marca: <span className={styles.textLight}>{brand}</span>
                 <br/> 
-                Modelo: {element.modelo}
+                Modelo: <span className={styles.textLight}>{model}</span>
                 <br/> 
-                CPU: {element.CPU}
+                CPU: <span className={styles.textLight}>{cpu}</span> 
                 <br/> 
-                RAM: {element.RAM}
+                RAM: <span className={styles.textLight}>{ram}</span>
                 <br/>
-                Sistema operativo: {element.sistemaOperativo}
+                Sistema operativo: <span className={styles.textLight}>{os}</span>
                 <br/>
-                Resolución de pantalla: {element.resolucionDePantalla}
+                Resolución de pantalla: <span className={styles.textLight}>{displayResolution}</span> 
                 <br/>
-                Bateria: {element.bateria}
+                Bateria: <span className={styles.textLight}>{battery}</span>
                 <br/>
-                Camaras: {element.camaras}
+                Camara frontal: <span className={styles.textLight}>{secondaryCmera}</span>
                 <br/>
-                Dimensiones: {element.dimensiones}
+                Camara trasera: <span className={styles.textLight}>{primaryCamera}</span>
                 <br/>
-                Peso: {element.peso}
+                Dimensiones: <span className={styles.textLight}> {dimentions}</span>
+                <br/>
+                Peso: <span className={styles.textLight}>{weight}</span> 
                 <br/>
                 
                          

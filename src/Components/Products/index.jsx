@@ -11,8 +11,10 @@ import { getProducts } from "../../apiConect";
 import axios from 'axios';
 import { useCallback } from "react";
 
+
+
 const urlProducts = 'https://front-test-api.herokuapp.com/api/product';
-const urlProductsId = 'https://front-test-api.herokuapp.com/api/product/:id';
+
 
 
 const Products = () => {
@@ -45,25 +47,17 @@ const Products = () => {
     } 
    
     const filtrar = (terminoBusqueda)=>{
-        const productosFiltrados = productosEst.filter((prod)=> prod.brand.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
-        );
+        const productosFiltrados = productosEst.filter((prod)=> {
+            const cond1 = prod.brand.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+            const cond2 = prod.model.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+            return cond1 || cond2;
+    });
         setProductosDin(productosFiltrados);
 
         console.log(productosFiltrados);
     }
-//console.log(productos);
 
-
-
-
-
-
-
-
-
-//useEffect(()=>{fetchData(urlProducts).catch(console.error)},[fetchData])
-//const getProdId = getProducts(urlProductsId);
-//console.log(getProdId);
+    
     return (
       <> 
        <div className={styles.search}> 

@@ -4,7 +4,7 @@ import styles from './styles.module.scss'
 const Header = () => {
     return (
         <div className={styles.header}>
-            <h1 className={styles.titulo}>Tu tienda de móviles</h1>
+            <h1 className={styles.titulo}> <a href="http://localhost:3000/"> Tu tienda de móviles</a></h1>
           
            <a className={styles.link} href='http://localhost:3000/'>Productos</a>
         </div>

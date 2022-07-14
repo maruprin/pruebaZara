@@ -1,23 +1,18 @@
 import React from "react";
 import styles from './styles.module.scss'
-import { ProductsData } from "../../Data/productsData";
 
-const Imagen = ({props}) => {
-    const itemId=props.itemId
-    let element = ProductsData[itemId-1]; 
-   console.log(itemId)
+
+const Imagen = (props) => {
+    
+  
    return(
-        <div className={styles.containerImagen}>
-           
-        {
-         <div className={styles.imagen}   key={1}>
-             <img src={element.imgUrl} alt={element.name} />
-         </div>
-        }
-       
-     </div>
+     <div className={styles.containerImagen}>
      
-   
+        <div className={styles.imagen}>
+            <img src={props.imgPath} alt={props.alt} /> 
+        </div>
+     </div>
+
     )
 }
 

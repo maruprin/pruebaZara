@@ -5,7 +5,10 @@ import { useState } from "react";
 
 
 
-const Acciones = () => {
+const Acciones = (props) => {
+
+    const {colors, internalMemory} = props.colorCapacity;
+
     const[framework, setFramework] = useState(2);
 
     const cambioRadioFramework = e =>{
@@ -37,6 +40,22 @@ const Acciones = () => {
             </Label>
            </FormGroup>
 
+for(i=0;i<colors.length-1;i++){
+
+           <FormGroup >
+            <Input
+            id="'radio'+i"
+            type="radio"
+            value="i"
+            checked={framework === i? true:false}
+            onChange={cambioRadioFramework}
+            />
+            <Label for="'radio'+i">
+                colors[i]
+            </Label>
+           </FormGroup>
+}
+
            <FormGroup>
             <Input
             id="radio2"
@@ -64,6 +83,8 @@ const Acciones = () => {
            </FormGroup>
            </FormGroup>
            </FormGroup>
+
+
 
            <FormGroup>
             Elige la capacidad que deseas
