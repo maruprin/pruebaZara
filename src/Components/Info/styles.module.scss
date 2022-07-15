@@ -1,9 +1,33 @@
 .containerInfo{
-   height: 800px; 
+   height: 900px; 
 }
 .titulo{
    position: absolute;
    top: 89px;
    left: 658px;
    font-size: 25px;
+}
+
+@media (max-width: 1024px){
+   .containerInfo{
+      height: 1200px; 
+   }
+   .titulo{
+      position: absolute;
+      top: 89px;
+      left: 430px;
+      font-size: 25px;
+   }
+}
+
+@media (max-width: 768px){
+   .containerInfo{
+      height: 2000px; 
+   }
+   .titulo{
+      position: absolute;
+      top: 89px;
+      left: 180px;
+      font-size: 23px;
+   }
 }

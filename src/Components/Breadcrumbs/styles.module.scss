@@ -1,13 +1,19 @@
-.crumbItem{
-    background-color: white;
-    border: 1px solid rgba(0,0,0,0.125);
-    border-radius: 0.37rem;
-   
+.bread{
+color: rgb(196, 131, 228);
+z-index: 5;
+position: relative;
+text-decoration: none;
+top: -106px;
+left: -675px;
+
 }
-.breadcrumb{
- position: absolute;
-    top: 100px;
-    color: black;
-    left: 100px;
-  
+.breadContainer{
+    margin-top: 90px;
+}
+.breadActive {
+ color: rgb(171, 62, 204);
+ position: relative;
+ top: -106px;
+ left: -673px;
+
 }

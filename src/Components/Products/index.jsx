@@ -13,6 +13,7 @@ import { useCallback } from "react";
 
 
 
+
 const urlProducts = 'https://front-test-api.herokuapp.com/api/product';
 
 
@@ -60,6 +61,7 @@ const Products = () => {
     
     return (
       <> 
+      
        <div className={styles.search}> 
        <input className={styles.inputBuscar}
        value={busqueda}
@@ -68,9 +70,8 @@ const Products = () => {
        />
        <button className={styles.btnSearch}>
             <FontAwesomeIcon className={styles.icono} icon={faSearch}/>
-       </button></div>
-        <div className={styles.productsContainer}>
-            
+       </button></div> 
+       <div className={styles.productsContainer}>
            {productosDin.map((product,i) => (
             <div className={styles.product}   key={i}>
                 <img src={product.imgUrl} alt={product.name} />
@@ -84,7 +85,7 @@ const Products = () => {
                          <Link to='/info' state={{from: product.id}} >Ver más</Link>
                     </p>
                 </div>
-                <button onClick={()=> addItemToCart(product)}>Lo quiero</button>
+                <button  className={styles.btnProd} onClick={()=> addItemToCart(product)}>Lo quiero</button>
          </div>
          )) }
         </div>

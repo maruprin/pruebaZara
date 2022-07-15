@@ -29,7 +29,7 @@ p{
     font-weight: bold;
     text-align: center;
 }
-button{
+button.btnProd{
     border: none;
     border-radius: 3px;
     padding: 5px 10px;
@@ -71,7 +71,11 @@ border-radius: 50%;
 }
 }
 
-
+div.breadProd{
+    margin-top: 20px;
+    margin-left: 20px;
+    color: black;
+}
 
 
 @media (max-width: 1024px){

@@ -1,35 +1,18 @@
-import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
-import React from "react";
+import { Link } from "react-router-dom";
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import React from "react"
 import styles from './styles.module.scss'
 
+export const  MyBreadCrumb = () => {
+return (
 
-function Breadcrumb(props){
-
-    function isLast(index){
-        return index === props.crumbs.length -1
-    }
-
-    return(
-        <nav className={styles.breadcrumb}>
-            <ol className={styles.crumbItem }>
-                {
-                    props.crumbs.map((crumb,ci) => {
-                        const disabled = isLast(ci) ? 'disabled' : '';
-                        return(
-                           <li key={ci}
-                           className={styles.breadcrumItem}
-                           >
-                            <button className={styles.disabled} onClick={()=> props.selected(crumb)}>
-                            { crumb }
-                            </button>
-                           </li> 
-                        );
-                    })
-                }
-
-            </ol>
-        </nav>
-    )
+    <div>
+      <Breadcrumb breadcrumbDelimiter="›" className={styles.breadContainer} tag="nav">
+        <BreadcrumbItem className={styles.bread} active tag="a" href="/">Home </BreadcrumbItem>
+        <BreadcrumbItem className={styles.breadActive}  tag="a">/ Info</BreadcrumbItem>
+      </Breadcrumb>
+    </div>
+)
 }
 
-export default Breadcrumb
+export default MyBreadCrumb

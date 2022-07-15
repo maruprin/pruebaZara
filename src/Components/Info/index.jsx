@@ -16,7 +16,7 @@ const Info = () => {
    const itemId = location.state.from;
    const urlProductsId = urlProducts + itemId;
    //console.log(urlProductsId)
-   const [imgPath, setImgPath] = useState("")//(ProductsData)
+   const [imgUrl, setImgUrl] = useState("")//(ProductsData)
    const [altPath, setAltPath] = useState("")
    const [caracteristicas, setCaracteristicas] = useState({})
     const [colorCapacity, setColorCapacity] = useState({})
@@ -25,7 +25,7 @@ const Info = () => {
      const fetchData = async (url) => {
        await axios.get(url).then(response=>{
             //console.log(response);
-           setImgPath(response.data.imgUrl);
+           setImgUrl(response.data.imgUrl);
            setAltPath(response.data.brand+" - "+response.data.model);
 
            const {brand, model, price, cpu, ram, os, displayResolution, battery, primaryCamera, secondaryCmera, dimentions, weight} = response.data;
@@ -33,10 +33,11 @@ const Info = () => {
           
            setCaracteristicas(objCaract);
             
-           const {colors, internalMemory} = response.data;
-           const colorsAndCapacity = {colors, internalMemory};
-           setColorCapacity(colorsAndCapacity);
-           //console.log(colors)
+           const {options} = response.data;
+          
+            //console.log(options)
+           setColorCapacity(options);
+          
            
 
 
@@ -46,16 +47,16 @@ const Info = () => {
        }
 
    useEffect(()=>{fetchData(urlProductsId)},[])
-
+console.log(caracteristicas.price)
     return (
         <>
         <div className={styles.containerInfo}>
             <Header/>
             <Cart/>
             <p className={styles.titulo}>Ficha técnica</p> 
-            <Imagen imgPath={imgPath} alt={altPath} />
+            <Imagen imgPath={imgUrl} alt={altPath} />
             <Descripcion caracteristicas={caracteristicas} />
-            <Acciones colorCapacity={colorCapacity} />
+            <Acciones colorCapacity={colorCapacity} itemId={itemId} imgUrl={imgUrl} {...caracteristicas}  />
 
             
            

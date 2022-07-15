@@ -1,22 +1,48 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from './styles.module.scss'
 import {FormGroup, Label, Input } from "reactstrap";
 import { useState } from "react";
+import axios from 'axios';
+import { CartContext } from "../../Context/cartContext";
 
-
+const urlCart = 'https://front-test-api.herokuapp.com/api/cart';
 
 const Acciones = (props) => {
-
-    let {colors, internalMemory} = props.colorCapacity;
-    if(!internalMemory){internalMemory=[]}
+    const {addItemToCart} = useContext(CartContext)
+    //console.log(props.colorCapacity)
+    let {colors, storages} = props.colorCapacity;
+    if(!storages){storages=[]}
     if(!colors){colors=[]}
-            
+    
     //console.log(colors)
 
     const[RBindexCapacidad, setRBindexCapacidad] = useState(0);
-    //console.log(internalMemory)
+    //console.log(props)
 
     const[RBindexColores, setRBindexColores] = useState(0);
+
+    const postData = async (url,article) => {
+        await axios.post(url,article).then(response=>{  
+           //alert("Tu producto ha sido añadido correctamente");
+        }).catch(error=>{console.log(error)})
+        }
+
+
+
+   const postToCart = () => {
+         const id = props.itemId;
+         const brand=props.brand
+         const model=props.model
+         const price=props.price
+         const imgUrl=props.imgUrl
+         const colorCode = colors[RBindexColores].code;
+         const storageCode = storages[RBindexCapacidad].code;
+         const article = {id, colorCode, storageCode}
+         const articleCart ={id,brand,model,price,imgUrl}
+         console.log(props)
+        postData(urlCart,article);
+        addItemToCart(articleCart)
+    }
 
 
 
@@ -31,59 +57,49 @@ const Acciones = (props) => {
        //console.log("Me cambio")
     }
     return (
-            <div className={styles.accion}>
-          <FormGroup>
-            Elige la capacidad que deseas
-            <br/><br/>
+            <div className={styles.accionContainer}>
+          
+            <p className={styles.tit}>Elige la capacidad que deseas</p> 
+            
            
 
-        {internalMemory.map((cap,i) => (
-            <FormGroup className={styles.item}  key={i}>
-                 <FormGroup >
-                    <Input
-            id={"radio" + i}
-            type="radio"
-            value={i}
-            checked={RBindexCapacidad == i? true:false}
-            onChange={cambioRadioCapacidad}
+        {storages.map((cap,i) => (
+            <div className={styles.itemAcc}  key={i}>
+             <Input
+                id={"radio" + i}
+                type="radio"
+                value={i}
+                checked={RBindexCapacidad == i? true:false}
+                onChange={cambioRadioCapacidad}
             />
-            <Label for={"radio"+i}>
-                {cap}
-            </Label>
-           </FormGroup>
-           </FormGroup>
+            <label for={"radio"+i}>
+                {cap.name}
+            </label>
+           </div>
              )) }
             
-             <FormGroup>
-            Elige tu color favorito
-            <br/><br/>
+             
+             <p className={styles.tit}>Elige tu color favorito</p>
+            
            
         {colors.map((col,i) => (
             
-            <FormGroup className={styles.item}  key={i}>
-                 <FormGroup >
-                    <Input
-            id={"radio" + i}
-            type="radio"
-            value={i}
-            checked={RBindexColores == i? true:false}
-            onChange={cambioRadioColores}
+            <div className={styles.itemAcc}  key={i}>
+            <Input
+                id={"radio" + i}
+                type="radio"
+                value={i}
+                checked={RBindexColores == i? true:false}
+                onChange={cambioRadioColores}
             />
-            <Label for={"radio"+i}>
-                {col}
-            </Label>
-           </FormGroup>
-           </FormGroup>
+            <label for={"radio"+i}>
+                {col.name}
+            </label>
+           
+           </div>
              )) }
-        
-       
-       
-         
-            </FormGroup>
-
-           </FormGroup>
-
-           <button>Añadir al carrito</button>
+    
+           <button className={styles.btnAcciones} onClick={postToCart} >Añadir al carrito</button>
         </div>
        
     
